@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Event</title>
+    <script src="./jquery.js"></script>
+    <style>
+        .mainDiv {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        #firstBox {
+            height: 300px;
+            width: 500px;
+            border: 3px solid rgb(12, 8, 8);
+            background-color: bisque;
+            padding: 2rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>jQuery Event</h1>
+    <div class="mainDiv">
+        <div id="firstBox">
+            <h1 style="text-align: center;">Events</h1>
+            <ul>
+                <li>click()</li>
+                <li>dbClick()</li>
+                <li>contextmenu()</li>
+                <li>mouseenter()</li>
+                <li>mouseleave()</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            //click()</
+            $('#firstBox').click(function () {
+                $(this).css({ "background-color": "red" });
+            });
+            //dbClick()
+            $('#firstBox').dblclick(function () {
+                $(this).css({ "background-color": "bisque" });
+            });
+            //contextmenu()
+            $('#firstBox').contextmenu(function () {
+                $(this).css({ "color": "#fff" });
+            });
+            //mouseenter()
+            $('#firstBox').mouseenter(function () {
+                $(this).css({ "color": "#000" });
+            });
+            //mouseleave()
+            $('#firstBox').mouseleave(function () {
+                $(this).css({ "color": "#fff" });
+            });
+        })
+    </script>
+</body>
+
+</html>

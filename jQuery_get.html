@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Get Method</title>
+    <script src="./jquery.js"></script>
+    <style>
+        .mainDiv {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        #firstBox {
+            height: 300px;
+            width: 500px;
+            border: 3px solid rgb(12, 8, 8);
+            background-color: bisque;
+            padding: 2rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>jQuery Get Method</h1>
+    <div class="mainDiv">
+        <div id="firstBox">
+            <h1 style="text-align: center;">Get Methods</h1>
+            <ul>
+                <li>text()</li>
+                <li>html()</li>
+                <li>attr()</li>
+                <li>val()</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            //text()
+            $('#firstBox h1').click(function () {
+                let text = $(this).text();
+                let setText = $(this).text("Set Method");
+                console.log("text", text)
+            });
+            //html()
+            $('#firstBox').click(function () {
+                let html = $(this).html();
+                console.log("html", html)
+            });
+            //val()
+            $('#firstBox').click(function () {
+                let val = $(this).val();
+                console.log("val", val)
+            });
+            //attr
+            $('#firstBox').click(function () {
+                let attr = $(this).attr('id');
+                console.log("attr", attr)
+            });
+
+
+        })
+    </script>
+</body>
+
+</html>

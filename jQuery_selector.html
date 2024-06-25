@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Selector</title>
+    <script src="./jquery.js"></script>
+    <style>
+        .mainDiv {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .selector-main {
+            display: flex;
+            justify-content: center;
+        }
+
+        #firstBox {
+            height: 200px;
+            width: 500px;
+            border: 3px solid rgb(12, 8, 8);
+            background-color: bisque;
+            padding: 1rem;
+        }
+
+        #secondBox {
+            height: 200px;
+            width: 500px;
+            border: 3px solid rgb(12, 12, 12);
+            background-color: cadetblue;
+            padding: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>jQuery Implementation</h1>
+    <div class="mainDiv">
+        <div id="firstBox">
+            <h1>Box 1</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt alias veniam quod consectetur commodi.
+            </p>
+        </div>
+        <div id="secondBox">
+            <h1>Box 1</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt alias veniam quod consectetur commodi.
+            </p>
+        </div>
+    </div>
+    <h1 style="text-align: center;">jQuery Selector</h1>
+    <div class="selector-main">
+        <ul>
+            <li class="classSelector">.(class)</li>
+            <li id="idSelector">#(Id)</li>
+            <li>b(<b>Bold Tag</b>)</li>
+            <li>${*}</li>
+            <li>${ul,li}</li>
+            <li>${.abc,.xyz}</li>
+            <li>${h1,h2,h3}</li>
+            <li>${p:first}</li>
+            <li>${p:last}</li>
+            <li>${li:even}</li>
+            <li>${li:odd}</li>
+        </ul>
+    </div>
+    <script>
+        $(document).ready(function () {
+            //.(class)
+            $('.classSelector').css({ "color": "gray" });
+            //#(id)
+            $('#idSelector').css({ "font-size": "20px" });
+            //element(b)
+            $('b').css({ "color": "red" });
+            //ul,li
+            $('ul,li').css({ "padding": "5px" });
+            //multiple class 
+            $('.selector-main,.mainDiv').css({ "margin": "5px" });
+            //li:first 
+            $('li:first').css({ "color": "cadetblue" });
+            //li:last 
+            $('li:last').css({ "color": "red" });
+            //li:odd 
+            $('li:odd').css({ "background": "#d9dfe9" });
+            //li:even 
+            $('li:even').css({ "background": "#eeedec" });
+        })
+    </script>
+</body>
+
+</html>
